@@ -163,6 +163,8 @@ export const useArcanaVotesRank = () => {
   });
 };
 
+// useArcanaRecentInvitation function
+
 export const useArcanaRecentInvitation = () => {
   return useQuery(['arcana_recent_invitation'], () => fetchArcanaRecentInvitation(), {
     select: (data) => (data.code === 200 ? data.data : undefined),

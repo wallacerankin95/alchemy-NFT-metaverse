@@ -39,6 +39,10 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
     [router],
   );
 
+// const isCollab = useMemo(
+//     () => router.pathname.indexOf('/collab') !== -1 || router.pathname.indexOf('/arcana') !== -1,
+//     [router],
+//   );
   useEffect(() => {
     const { code } = router.query;
     code && setLocalStorage(STORAGE_KEY.INVITE_CODE, code);

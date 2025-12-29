@@ -180,6 +180,9 @@ export const fetchCollabItem = (id: string) => request.get<any, Response<CollabI
 export const fetchCollabUserInfo = (data: CollabUserParams) =>
   request.post<any, Response<CollabUserInfo>>('/v2/collab/addr/info', data);
 
+// export const fetchWorldCupUserInfo = (walletAddress?: string) =>
+  // request.post<any, Response<WorldCapInfo>>('/v2/worldCup/userInfo', { walletAddress, collabCode: 'qatar2022' });
+
 export const fetchCollabJoin = (data: CollabUserParams) => request.post<any, Response<CollabUserInfo>>('/v2/collab/join', data);
 
 export const fetchCollabTweetVerify = (data: CollabTweetVerifyParams) =>
