@@ -7,7 +7,6 @@ const crypto = require('crypto');
 const cloudinary = require('cloudinary');
 const axios = require('axios');
 
-
 // Register User
 exports.registerUser = asyncErrorHandler(async (req, res, next) => {
 
@@ -205,7 +204,7 @@ exports.getCookie= asyncErrorHandler(async (req, res, next) => {
 
 // ADMIN DASHBOARD
 
-// Get All Users --ADMIN
+// Get All Users -- ADMIN
 exports.getAllUsers = asyncErrorHandler(async (req, res, next) => {
 
     const users = await User.find();
@@ -216,7 +215,7 @@ exports.getAllUsers = asyncErrorHandler(async (req, res, next) => {
     });
 });
 
-// Get Single User Details --ADMIN
+// Get Single User Details -- ADMIN
 exports.getSingleUser = asyncErrorHandler(async (req, res, next) => {
 
     const user = await User.findById(req.params.id);
@@ -231,7 +230,23 @@ exports.getSingleUser = asyncErrorHandler(async (req, res, next) => {
     });
 });
 
-// Update User Role --ADMIN
+// Delete Role --ADMIN
+exports.deleteUser = asyncErrorHandler(async (req, res, next) => {
+
+    const user = await User.findById(req.params.id);
+
+    if(!user) {
+        return next(new ErrorHandler(`User doesn't exist with id: ${req.params.id}`, 404));
+    }
+
+    await user.remove();
+
+    res.status(200).json({
+        success: true
+    });
+});
+
+// Update User Role -- ADMIN
 exports.updateUserRole = asyncErrorHandler(async (req, res, next) => {
 
     const newUserData = {
@@ -249,21 +264,5 @@ exports.updateUserRole = asyncErrorHandler(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-    });
-});
-
-// Delete Role --ADMIN
-exports.deleteUser = asyncErrorHandler(async (req, res, next) => {
-
-    const user = await User.findById(req.params.id);
-
-    if(!user) {
-        return next(new ErrorHandler(`User doesn't exist with id: ${req.params.id}`, 404));
-    }
-
-    await user.remove();
-
-    res.status(200).json({
-        success: true
     });
 });

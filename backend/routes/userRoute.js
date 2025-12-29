@@ -4,6 +4,8 @@ const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/user_act
 
 const router = express.Router();
 
+// routes of Users
+
 router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);
 router.route('/logout').get(logoutUser);

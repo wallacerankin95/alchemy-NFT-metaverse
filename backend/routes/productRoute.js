@@ -4,6 +4,7 @@ const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/user_act
 
 const router = express.Router();
 
+// routes
 router.route('/products').get(getAllProducts);
 router.route('/products/all').get(getProducts);
 

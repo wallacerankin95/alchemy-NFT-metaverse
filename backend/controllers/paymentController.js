@@ -94,7 +94,7 @@ exports.paytmResponse = (req, res, next) => {
                 /* for Staging */
                 hostname: 'securegw-stage.paytm.in',
                 /* for Production */
-                // hostname: 'securegw.paytm.in',
+                
                 port: 443,
                 path: '/v3/order/status',
                 method: 'POST',

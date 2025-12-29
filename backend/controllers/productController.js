@@ -118,7 +118,7 @@ exports.createProduct = asyncErrorHandler(async (req, res, next) => {
     });
 });
 
-// Update Product ---ADMIN
+// Update Product --- ADMIN
 exports.updateProduct = asyncErrorHandler(async (req, res, next) => {
 
     let product = await Product.findById(req.params.id);

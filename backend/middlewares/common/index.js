@@ -85,4 +85,3 @@ exports.districts = [
   "terhathum",
   "udayapur"
 ]
-

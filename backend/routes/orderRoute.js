@@ -4,6 +4,7 @@ const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/user_act
 
 const router = express.Router();
 
+// routes of orders 
 router.route('/order/new').post(isAuthenticatedUser, newOrder);
 router.route('/order/:id').get(isAuthenticatedUser, getSingleOrderDetails);
 router.route('/orders/me').get(isAuthenticatedUser, myOrders);
