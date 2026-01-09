@@ -326,6 +326,12 @@
     border: 1px solid #5c5c5c;
     background: linear-gradient(180deg, #171619 2.63%, #1d2122 50.48%, #252c30 97.37%);
   }
+  
+  /*.dota__easter {
+    cursor: pointer;
+    border: 1px solid #5c5c5c;
+    background: linear-gradient(180deg, #171619 2.63%, #1d2122 50.48%, #252c30 97.37%);
+  }*/
 
   .dota__easter:hover {
     border: 1px solid #848484;
