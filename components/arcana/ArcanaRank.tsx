@@ -1,7 +1,6 @@
 import Loading from '../loading';
 import { RewardRankItem } from '../../lib/types';
 import { useArcanaRewardRank } from '../../hooks/arcana';
-// import { React } from 'React';
 
 function RankItem({ data, index }: { data: RewardRankItem; index: number }) {
   return (

@@ -14,8 +14,6 @@ export const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 export const metaMaskConnector = new MetaMaskConnector({ chains });
 
-// export const Connector = new MetaMaskConnector({ chains });
-
 export const walletConnectConnector = new WalletConnectConnector({
   chains,
   options: { projectId: 'af716327386d5071687fc3727a00e321' },
